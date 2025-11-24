@@ -1,22 +1,7 @@
 {
   "permissions": {
     "allow": [
-      "Bash(ssh-keygen:*)",
-      "Bash(ssh:*)",
-      "Bash(python extract_pdf.py:*)",
-      "Bash(pdf_content.txt)",
-      "Bash(pip install:*)",
-      "Bash(python extract_pdf_images.py:*)",
-      "Bash(python convert_to_static.py:*)",
-      "Bash(git add:*)",
-      "Bash(git commit:*)",
-      "Bash(git push:*)",
-      "Bash(for img in assets/images/project-landscape-1/*.JPG)",
-      "Bash(done)",
-      "Bash(python optimize_images.py:*)",
-      "Bash(git rm:*)",
-      "Bash(.gitignore)",
-      "Bash(ls \"G:\\My Drive\\Projects\\Portfolio\\assets\\images\\project-landscape-1\"\" | grep -i \"DSC00004 \")"
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

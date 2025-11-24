@@ -1,0 +1,146 @@
+<?php
+$meta = [
+  'title' => 'Camp Bullis Estate — Large-Scale Site Grading and Athletic Facilities',
+  'date' => '2015-09-01',
+  'keywords' => ['landscape architecture', 'site grading', 'athletic facilities', 'mountain excavation', 'slope mitigation', 'estate design']
+];
+include __DIR__ . '/../partials/header.php';
+?>
+
+<section>
+  <h1 class="section-title"><?php echo htmlspecialchars($meta['title']); ?></h1>
+  <p class="proj-date"><?php echo htmlspecialchars($meta['date']); ?></p>
+
+  <!-- Carousel -->
+  <div class="carousel">
+    <div class="slides">
+      <?php
+        $folder = __DIR__ . '/../assets/images/project-camp-bullis/';
+        $webpath = '/assets/images/project-camp-bullis/';
+        if (is_dir($folder)) {
+          $images = glob($folder . '*.{jpg,jpeg,png,gif,webp,JPG,JPEG,PNG,GIF,WEBP}', GLOB_BRACE);
+          sort($images);
+          $first = true;
+          foreach ($images as $file) {
+            $filename = basename($file);
+            if ($filename !== 'desktop.ini') {
+              // First image loads immediately, rest use lazy loading
+              if ($first) {
+                echo "<img src='{$webpath}{$filename}' alt='Project image'>";
+                $first = false;
+              } else {
+                echo "<img src='{$webpath}{$filename}' loading='lazy' alt='Project image'>";
+              }
+            }
+          }
+        }
+      ?>
+    </div>
+    <button class="prev">❮</button>
+    <button class="next">❯</button>
+  </div>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function(){
+    const carousel = document.querySelector('.carousel');
+    if (!carousel) return;
+    const slidesContainer = carousel.querySelector('.slides');
+    const slides = slidesContainer.querySelectorAll('img');
+    if (slides.length === 0) return;
+    const prev = carousel.querySelector('.prev');
+    const next = carousel.querySelector('.next');
+    let index = 0;
+    function showSlide(i){
+      index = (i + slides.length) % slides.length;
+      slidesContainer.style.transform = `translateX(${-index * 100}%)`;
+    }
+    prev.addEventListener('click', ()=> showSlide(index - 1));
+    next.addEventListener('click', ()=> showSlide(index + 1));
+    showSlide(0);
+  });
+  </script>
+
+  <p class="lead">
+    Located in one of San Antonio's most prestigious neighborhoods near Camp Bullis, this project involved
+    comprehensive site planning and terrain modification for a high-profile estate. The client—a longtime
+    collaborator across multiple projects—requested a complete property transformation to accommodate a new
+    residence while integrating specific recreational and functional requirements into a challenging
+    hillside site.
+  </p>
+
+  <h2 class="section-title">Design Challenge</h2>
+  <p>
+    The property presented significant topographic challenges: steep slopes, a mountainous backdrop, and
+    limited flat terrain. The client's vision required dramatic intervention—cutting into the mountainside
+    to create usable space while maintaining the site's visual relationship to the surrounding landscape.
+    The program called for full-sized athletic facilities (basketball and soccer) directly accessible from
+    the main residence, along with solutions for vehicle access and parking on severely sloped terrain.
+  </p>
+
+  <h2 class="section-title">Site Analysis and Survey</h2>
+  <p>
+    After comprehensive surveying of the entire property, I developed this master plan in close consultation
+    with my father and the property owner. The planning process balanced multiple competing requirements:
+    maximizing usable flat space, maintaining structural stability during and after excavation, managing
+    stormwater drainage across modified terrain, and creating a sequence of outdoor spaces that felt
+    intentional rather than imposed.
+  </p>
+
+  <h2 class="section-title">Design Solution</h2>
+  <p>
+    <strong>Mountain Excavation:</strong> The most dramatic intervention involved cutting into the rear
+    mountainside to create a level plateau. This required careful calculation of cut-and-fill volumes,
+    ensuring that excavated material could be redistributed on-site for grading and terracing elsewhere
+    on the property. The cut was designed to create stable slopes that wouldn't require excessive
+    retaining structures while opening views and creating the flat area needed for athletic facilities.
+  </p>
+
+  <p>
+    <strong>Athletic Facilities:</strong> Positioned directly off the main residence's back porch, the
+    basketball and soccer field occupy the plateau created by the mountain excavation. This placement
+    creates a direct visual and physical connection between the house and recreational spaces—the fields
+    become an extension of the home's outdoor living areas rather than separate, distant amenities.
+  </p>
+
+  <p>
+    <strong>Access and Circulation:</strong> The steep approach to the property required careful design
+    of roads, driveways, and parking areas. Rather than fighting the slope with excessive retaining walls
+    or dramatic cuts, the circulation system works with the topography—using switchbacks, gentle curves,
+    and strategic grading to maintain manageable grades while minimizing visual impact. Parking areas
+    were carved into the hillside at appropriate points, creating level surfaces without requiring
+    massive structural intervention.
+  </p>
+
+  <h2 class="section-title">Planning Methodology</h2>
+  <p>
+    This project represents a collaborative design process—working directly with the owner and my father
+    to refine the plan through conversation and site evaluation. The drawn plan served as a communication
+    tool and documentation of our collective decisions, capturing agreements about grading strategies,
+    placement of major features, and circulation patterns. Unlike projects that begin with formal drawings
+    and specifications, this planning effort remained flexible, allowing adjustments as we considered
+    construction logistics, budget implications, and evolving client priorities.
+  </p>
+
+  <h2 class="section-title">Technical Considerations</h2>
+  <p>
+    The plan addresses multiple technical requirements: cut-and-fill calculations to balance earthwork
+    volumes, drainage patterns to manage water across modified terrain, structural considerations for
+    slopes and potential retaining elements, and vehicle turning radii for driveways and parking areas.
+    Each decision reflected an understanding that the built result would need to function reliably while
+    appearing natural and uncontrived.
+  </p>
+
+  <h2 class="section-title">Project Documentation</h2>
+  <p>
+    This site plan represents the primary design documentation for the project—a comprehensive master
+    plan showing topography, proposed grading, major landscape features, structures, circulation, and
+    planting strategies. It captures a moment in the design process where vision, technical requirements,
+    and client needs aligned into a workable proposal. The plan demonstrates how large-scale site
+    transformation can create functional outdoor spaces while respecting the character of the surrounding
+    landscape.
+  </p>
+
+  <a class="btn" href="/projects.php">Back to all projects</a>
+</section>
+
+<?php include __DIR__ . '/../partials/footer.php'; ?>

@@ -4,7 +4,7 @@ from PIL import Image
 
 # Directories to optimize
 BASE_DIR = Path(r"G:\My Drive\Projects\Portfolio\assets\images")
-FOLDERS_TO_OPTIMIZE = ['project-landscape-1', 'project-landscape-2']
+FOLDERS_TO_OPTIMIZE = ['project-landscape-1', 'project-landscape-2', 'project-camp-bullis']
 
 # Target max width for images (height will scale proportionally)
 MAX_WIDTH = 1200
