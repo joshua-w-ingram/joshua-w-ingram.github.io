@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Josh Ingram</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+ <header class="site-header">
+  <div class="container header-inner">
+    <div class="brand"><a href="/index.html">Josh Ingram</a></div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
+    <nav class="main-nav">
+      <a href="/index.html">Home</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+function toggleMenu(){
+  const nav=document.querySelector('.main-nav');
+  nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+}
+</script>
+
+  <main class="site-content container">
+
+
+<section>
+  <h1 class="section-title">[PROJECT NAME NEEDED]</h1>
+  <p class="proj-date">[DATE NEEDED - format: 2024-01-15]</p>
+
+  <p class="lead">
+    [BRIEF PROJECT OVERVIEW NEEDED - 2-3 sentences introducing what this project is about]
+  </p>
+
+  <h2 class="section-title">Project Background</h2>
+  <p>
+    [PROJECT CONTEXT - What was the project? Who was it for? What was the goal?]
+  </p>
+
+  <h2 class="section-title">Approach</h2>
+  <p>
+    [YOUR ROLE & PROCESS - What did you do? What methods/tools did you use?]
+  </p>
+
+  <h2 class="section-title">Key Features / Highlights</h2>
+  <p>
+    [NOTABLE ASPECTS - What makes this project interesting? What were the key design decisions?]
+  </p>
+
+  <h2 class="section-title">Challenges & Solutions</h2>
+  <p>
+    [WHAT OBSTACLES DID YOU FACE? How did you solve them?]
+  </p>
+
+  <h2 class="section-title">Outcome</h2>
+  <p>
+    [RESULTS - What was achieved? What did you learn?]
+  </p>
+
+  <!-- Carousel -->
+  <div class="carousel">
+    <div class="slides">
+    </div>
+    <button class="prev">❮</button>
+    <button class="next">❯</button>
+  </div>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function(){
+    const carousel = document.querySelector('.carousel');
+    if (!carousel) return;
+    const slidesContainer = carousel.querySelector('.slides');
+    const slides = slidesContainer.querySelectorAll('img');
+    if (slides.length === 0) return;
+    const prev = carousel.querySelector('.prev');
+    const next = carousel.querySelector('.next');
+    let index = 0;
+    function showSlide(i){
+      index = (i + slides.length) % slides.length;
+      slidesContainer.style.transform = `translateX(${-index * 100}%)`;
+    }
+    prev.addEventListener('click', ()=> showSlide(index - 1));
+    next.addEventListener('click', ()=> showSlide(index + 1));
+    showSlide(0);
+  });
+  </script>
+
+  <a class="btn" href="/projects.html">Back to all projects</a>
+</section>
+
+
+
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      &copy; 2025 Josh Ingram &mdash; <a href="mailto:joshua.w.ingram@gmail.com">joshua.w.ingram@gmail.com</a>
+    </div>
+  </footer>
+</body>
+</html>

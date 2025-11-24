@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Josh Ingram</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+ <header class="site-header">
+  <div class="container header-inner">
+    <div class="brand"><a href="/index.html">Josh Ingram</a></div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
+    <nav class="main-nav">
+      <a href="/index.html">Home</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+function toggleMenu(){
+  const nav=document.querySelector('.main-nav');
+  nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+}
+</script>
+
+  <main class="site-content container">
+
+
+<section>
+  <h1 class="section-title">Portfolio 2008 — Computational Design & Emergent Systems</h1>
+  <p class="proj-date">2008-12-01</p>
+
+  <p class="lead">
+    During my studies in the Product Architecture and Engineering program at Stevens Institute of Technology
+    and my role within the BlackBox research studio at Skidmore Owings & Merrill, I focused on applying
+    computer science to design problems. This portfolio explores emergence, bottom-up rule sets,
+    self-organization, optimization, and artificial intelligence in architectural and product design.
+  </p>
+
+  <h2 class="section-title">Growing Cities — Emergent Urban Development</h2>
+  <p>
+    Instead of predetermining city layouts through traditional zoning, this project simulates organic city growth
+    through emergent processes. Like a forest ecosystem that naturally balances plant and animal life,
+    this system creates a city where buildings support economic, social, civic, and industrial activities
+    through interdependent relationships.
+  </p>
+
+  <p>
+    <strong>Core Concept:</strong> Buildings use neighboring structures to support growth. Each building type
+    has specific needs and ratios of other building types nearby. Parks increase a building's neighboring count.
+    The system calculates happiness based on mix satisfaction, neighborhood context, and proximity to desired uses.
+  </p>
+
+  <p>
+    <strong>Process:</strong> Over 10,000 generations, the system self-organizes from random initial conditions
+    into coherent neighborhoods with appropriate density gradients, park distribution, and building type clustering.
+    The framework was used at the ACADIA 2008 conference where multiple participants collaborated to collectively
+    create a city using a bottom-up, emergent approach.
+  </p>
+
+  <h2 class="section-title">Architectural Genomics — Genetic Algorithms for Design</h2>
+  <p>
+    At SOM's BlackBox studio, I developed custom genetic algorithm tools to search for optimal design solutions.
+    Rather than finding a single answer, the system generates collections of high-performing solutions with
+    different aesthetic qualities, assisting designers in making informed decisions.
+  </p>
+
+  <p>
+    <strong>Technical Implementation:</strong> The GA was built as a flexible dynamic link library (.dll)
+    that connects to any analysis program. By breaking geometry into computer-readable genomes, the system
+    rapidly searches design spaces. Initial generations show rapid improvement, followed by convergence toward
+    optimal solutions. The variety of results meeting performance criteria gives designers aesthetic choice
+    while maintaining technical requirements.
+  </p>
+
+  <h2 class="section-title">Window Form Optimization — Solar Performance</h2>
+  <p>
+    For the Ali Al-Sabah Military Academy in Kuwait City, we redesigned sculpted wall surfaces around punched
+    windows to minimize direct solar radiation across all four cardinal orientations. Using Digital Project,
+    Speos, Excel, and custom genetic algorithms, the system automated generation of optimal geometries.
+  </p>
+
+  <p>
+    <strong>Approach:</strong> Each facade and floor level was tested multiple times with varying parameters
+    (wall thickness, shroud depth, glass transmittance, window count). The genome controlled X-Y position and
+    Bezier curve parameters, with auto-detection of invalid geometries (self-intersection, excessive coverage).
+    The algorithm produced top performers for each orientation, giving the design team aesthetic flexibility
+    while meeting solar performance targets.
+  </p>
+
+  <h2 class="section-title">View Calculator — Quantifying Architectural Perspective</h2>
+  <p>
+    The View Calculator is a ray-based algorithm that quantifies view quality by measuring distances and visibility
+    percentages to contextual objects. Instead of calculating shading or light, it calculates distance and angle
+    to landmarks and context, enabling data-driven decisions about view quality in early design stages.
+  </p>
+
+  <p>
+    <strong>Analysis Modes:</strong> Distance analysis provides general context information through color gradients.
+    Landmark analysis tracks specific buildings or natural features, showing position-specific visibility.
+    The tool outputs average distance, weighted distance, view vectors, percent visible, and deviation from center view.
+  </p>
+
+  <h2 class="section-title">Video Pong / Video Breakout — Interactive Systems</h2>
+  <p>
+    These webcam interaction games used light rings for player communication. I developed a custom blob detection
+    algorithm for light sources, creating virtual paddles between two point sources. The intentional pixelization
+    added complexity to gameplay. Collaboration with Mark Pollock.
+  </p>
+
+  <h2 class="section-title">Molecules — Shadow-Based Interaction</h2>
+  <p>
+    This webcam-based project used hand shadows on a translucent surface to create and interact with projected
+    "molecules." Specific hand patterns generated atoms that could be released to interact with other particles
+    and people. Molecules exhibit gravitational attraction until proximity triggers repulsion. Gestures include
+    creation, release, catch, and containment. Proof-of-concept for entertainment and educational devices.
+    Collaboration with Mark Pollock.
+  </p>
+
+  <h2 class="section-title">Generative Experiments — Algorithmic Exploration</h2>
+
+  <h3>Ant Colony</h3>
+  <p>
+    Simulation of ant foraging behavior: ants move randomly, communicate food location upon discovery,
+    return home to inform others, then path back to food. The algorithm partially simulates communication
+    through predefined random paths rather than true pheromone trails.
+  </p>
+
+  <h3>Flocking</h3>
+  <p>
+    Each object has a location and movement vector. Objects maintain personal space (1.0 unit radius).
+    If no violations, they sum visible object vectors and move. If space is violated, they reverse direction
+    from violators. Simple rules create complex emergent flocking patterns.
+  </p>
+
+  <h3>Jellyfish</h3>
+  <p>
+    Simulates jellyfish movement through dual systems: boundary points move normal to center, retract near
+    objects, and expand/contract based on target area. Center point moves toward boundary centroid.
+    The interdependence of shape and movement creates organic motion.
+  </p>
+
+  <h3>Hexagons</h3>
+  <p>
+    Geometric assembly system using three base hexagons with 120-degree rotation rules. Explores how simple
+    geometric constraints generate complex assemblies and patterns.
+  </p>
+
+  <h2 class="section-title">Algorithmic Art — Recursive & Parametric Forms</h2>
+  <p>
+    Series of generative artworks exploring recursion, object-oriented programming, and polymorphism.
+    Projects include recursive tree structures, parametric curves, and self-similar geometric patterns.
+    These experiments investigate how simple mathematical rules generate visually complex and aesthetically
+    compelling forms.
+  </p>
+
+  <!-- Carousel -->
+  <div class="carousel">
+    <div class="slides">
+    </div>
+    <button class="prev">❮</button>
+    <button class="next">❯</button>
+  </div>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function(){
+    const carousel = document.querySelector('.carousel');
+    if (!carousel) return;
+    const slidesContainer = carousel.querySelector('.slides');
+    const slides = slidesContainer.querySelectorAll('img');
+    if (slides.length === 0) return;
+    const prev = carousel.querySelector('.prev');
+    const next = carousel.querySelector('.next');
+    let index = 0;
+    function showSlide(i){
+      index = (i + slides.length) % slides.length;
+      slidesContainer.style.transform = `translateX(${-index * 100}%)`;
+    }
+    prev.addEventListener('click', ()=> showSlide(index - 1));
+    next.addEventListener('click', ()=> showSlide(index + 1));
+    showSlide(0);
+  });
+  </script>
+
+  <a class="btn" href="/projects.html">Back to all projects</a>
+</section>
+
+
+
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      &copy; 2025 Josh Ingram &mdash; <a href="mailto:joshua.w.ingram@gmail.com">joshua.w.ingram@gmail.com</a>
+    </div>
+  </footer>
+</body>
+</html>

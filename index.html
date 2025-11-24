@@ -1,25 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Josh Ingram Portfolio</title>
-  <meta http-equiv="refresh" content="0; url=https://phpstack-1485973-5941686.cloudwaysapps.com">
-  <script>
-    window.location.replace("https://phpstack-1485973-5941686.cloudwaysapps.com");
-  </script>
-  <style>
-    html, body { height: 100%; margin: 0; }
-    body {
-      display: flex; align-items: center; justify-content: center;
-      font-family: Arial, Helvetica, sans-serif; background: #0b0b0b; color: #f1f1f1;
-      text-align: center;
-    }
-    a { color: #4cc; text-decoration: none; }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Josh Ingram</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-  <p>Redirecting to my portfolio. If it does not open, 
-    <a href="https://phpstack-1485973-5941686.cloudwaysapps.com">click here</a>.
-  </p>
+ <header class="site-header">
+  <div class="container header-inner">
+    <div class="brand"><a href="/index.html">Josh Ingram</a></div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
+    <nav class="main-nav">
+      <a href="/index.html">Home</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+function toggleMenu(){
+  const nav=document.querySelector('.main-nav');
+  nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+}
+</script>
+
+  <main class="site-content container">
+<section class='hero'><h1>Design. Build. Iterate.</h1><p>Bridging design and manufacturing through hands on engineering and creative problem solving.</p></section><p style='text-align:center'><a class='btn' href='/projects.html'>View All Projects</a></p>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      &copy; 2025 Josh Ingram &mdash; <a href="mailto:joshua.w.ingram@gmail.com">joshua.w.ingram@gmail.com</a>
+    </div>
+  </footer>
 </body>
 </html>
