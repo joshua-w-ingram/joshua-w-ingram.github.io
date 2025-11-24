@@ -1,0 +1,1 @@
+<?php include __DIR__ . '/partials/header.php'; ?><section class='hero'><h1>Contact</h1><p>Email <a href='mailto:joshua.w.ingram@gmail.com'>joshua.w.ingram@gmail.com</a></p></section><?php include __DIR__ . '/partials/footer.php'; ?>

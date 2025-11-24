@@ -1,0 +1,179 @@
+<?php
+$meta = [
+  'title' => 'ColorData — Mobile App for Color Identification',
+  'date' => '2010-12-23',
+  'keywords' => ['mobile app', 'windows phone', 'accessibility', 'colorblindness', 'UX design', 'C#']
+];
+include __DIR__ . '/../partials/header.php';
+?>
+
+<section>
+  <h1 class="section-title"><?php echo htmlspecialchars($meta['title']); ?></h1>
+  <p class="proj-date"><?php echo htmlspecialchars($meta['date']); ?></p>
+
+  <p class="lead">
+    "Color Data is an app designed to assist you with remembering colors that you like, as well as
+    identifying color values that are hard to distinguish. It has an intuitive interface. It lets you
+    snap a photo or grab one from your library. Once you have an image, you can zoom in and find the exact
+    color you want. Color Data not only provides a way to save the color, but also provides information
+    about color numerics and even harmonies."
+  </p>
+
+  <p style="font-style: italic; margin-top: 1rem;">
+    — App description from the Windows Phone Marketplace, December 2010
+  </p>
+
+  <h2 class="section-title">Concept & Motivation</h2>
+  <p>
+    Though I am colorblind, I find myself drawn to issues of color. I believe that it is because of the
+    straightforward way a computer can quantify color. It lets me be a little closer to understanding
+    them myself and in the process, hopefully, help others with color-related issues.
+  </p>
+
+  <p>
+    ColorData transforms the subjective experience of color into objective data. For someone who experiences
+    color differently, the precision of RGB values, hex codes, HSL measurements, and CMYK percentages provides
+    a reliable framework for working with and communicating about color.
+  </p>
+
+  <h2 class="section-title">Key Features</h2>
+
+  <h3>Photo Capture & Selection</h3>
+  <p>
+    Users can snap a new photo or select from their existing library. The zoom functionality enables
+    precise pixel-level color selection, ensuring accurate color capture even in complex images.
+  </p>
+
+  <h3>Color Information Display</h3>
+  <p>
+    The app presents color data in multiple formats:
+  </p>
+  <ul>
+    <li><strong>RGB Info:</strong> Red, Green, Blue values (0-255 range)</li>
+    <li><strong>HLV Info:</strong> Hue (0-360°), Lightness, Value percentages</li>
+    <li><strong>CMYK Info:</strong> Cyan, Magenta, Yellow, Key (black) percentages</li>
+    <li><strong>Hexadecimal:</strong> Standard web color format (#RRGGBB)</li>
+  </ul>
+
+  <h3>Split Complement Color Harmonies</h3>
+  <p>
+    Beyond individual color identification, ColorData calculates complementary and split-complementary
+    color harmonies. This feature assists users in developing cohesive color palettes based on
+    color theory principles.
+  </p>
+
+  <h3>Color Sets & Collections</h3>
+  <p>
+    Users can organize colors into named sets with descriptions and notes. This organizational system
+    enables saving color palettes for specific projects, tracking colors seen in the world, or building
+    reference libraries for design work. Examples from user reviews include sets for:
+  </p>
+  <ul>
+    <li>Monarch butterfly wing colors</li>
+    <li>Bluejay plumage</li>
+    <li>Lawn chair fabrics</li>
+    <li>John's car paint</li>
+    <li>Website design palettes</li>
+  </ul>
+
+  <h3>Tweek Screen</h3>
+  <p>
+    The "tweek" (fine-tune) screen allows users to adjust color selections after capture. This accounts
+    for device camera variations and lighting conditions, ensuring the saved color matches the user's intent
+    rather than just the captured pixel.
+  </p>
+
+  <h2 class="section-title">User Reception</h2>
+  <p>
+    ColorData received positive reviews on the Windows Phone Marketplace, with users appreciating the
+    intuitive interface and regular updates. Key feedback themes:
+  </p>
+
+  <blockquote>
+    <p>"Very helpful and intuitive application. Regular updates make the experience even better."</p>
+    <cite>— bearfaq, February 2011</cite>
+  </blockquote>
+
+  <blockquote>
+    <p>"I like seeing the color values. I'm colorblind and the numbers make [it accessible]."</p>
+    <cite>— Prak Coton, January 2011</cite>
+  </blockquote>
+
+  <blockquote>
+    <p>"Very nice. Especially Like the tweek screen to fine tune a selection that will invariably be a
+    shade or two off depending on the device shooting the picture. Would like to see an option to blow
+    up a color square to a near full screen, maybe with a double tap or tap and hold. Easier to match up
+    a color when out shopping and can't bring a physical sample with you. Thank you."</p>
+    <cite>— Jimski27, February 2011</cite>
+  </blockquote>
+
+  <h2 class="section-title">Technical Implementation</h2>
+  <p>
+    Developed for Windows Phone using C# and the Windows Phone SDK. The app handles:
+  </p>
+  <ul>
+    <li>Camera integration and photo library access</li>
+    <li>Image manipulation and zoom controls</li>
+    <li>Color space conversions (RGB ↔ HSL ↔ CMYK ↔ Hex)</li>
+    <li>Color harmony calculations</li>
+    <li>Local data storage for color sets</li>
+    <li>Touch-based UI optimized for mobile interaction</li>
+  </ul>
+
+  <h2 class="section-title">Reflection</h2>
+  <p>
+    ColorData represents an intersection of personal need and technical capability. By approaching
+    color as data rather than purely visual experience, the app makes color accessible to users who
+    perceive it differently. The project demonstrates how computational thinking can bridge perceptual
+    differences and create practical tools for everyday challenges.
+  </p>
+
+  <p>
+    The positive user reception and ongoing feature requests validated the concept: quantifying color
+    serves both accessibility needs and practical use cases like design work, shopping, and color matching.
+  </p>
+
+  <!-- Carousel -->
+  <div class="carousel">
+    <div class="slides">
+      <?php
+        $folder = __DIR__ . '/../assets/images/portfolio-2010/';
+        $webpath = '/assets/images/portfolio-2010/';
+        if (is_dir($folder)) {
+          $images = glob($folder . '*.{jpg,jpeg,png,gif,webp}', GLOB_BRACE);
+          sort($images);
+          foreach ($images as $file) {
+            $filename = basename($file);
+            echo "<img src='{$webpath}{$filename}' alt='ColorData screenshot'>";
+          }
+        }
+      ?>
+    </div>
+    <button class="prev">❮</button>
+    <button class="next">❯</button>
+  </div>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function(){
+    const carousel = document.querySelector('.carousel');
+    if (!carousel) return;
+    const slidesContainer = carousel.querySelector('.slides');
+    const slides = slidesContainer.querySelectorAll('img');
+    if (slides.length === 0) return;
+    const prev = carousel.querySelector('.prev');
+    const next = carousel.querySelector('.next');
+    let index = 0;
+    function showSlide(i){
+      index = (i + slides.length) % slides.length;
+      slidesContainer.style.transform = `translateX(${-index * 100}%)`;
+    }
+    prev.addEventListener('click', ()=> showSlide(index - 1));
+    next.addEventListener('click', ()=> showSlide(index + 1));
+    showSlide(0);
+  });
+  </script>
+
+  <a class="btn" href="/projects.php">Back to all projects</a>
+</section>
+
+<?php include __DIR__ . '/../partials/footer.php'; ?>

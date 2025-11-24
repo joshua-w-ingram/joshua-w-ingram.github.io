@@ -1,0 +1,1 @@
+<?php include __DIR__ . '/partials/header.php'; ?><section class='hero'><h1>Design. Build. Iterate.</h1><p>Bridging design and manufacturing through hands on engineering and creative problem solving.</p></section><p style='text-align:center'><a class='btn' href='/projects.php'>View All Projects</a></p><?php include __DIR__ . '/partials/footer.php'; ?>

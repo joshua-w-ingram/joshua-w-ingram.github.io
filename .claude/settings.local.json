@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ssh-keygen:*)",
+      "Bash(ssh:*)",
+      "Bash(python extract_pdf.py:*)",
+      "Bash(pdf_content.txt)",
+      "Bash(pip install:*)",
+      "Bash(python extract_pdf_images.py:*)",
+      "Bash(python convert_to_static.py:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(for img in assets/images/project-landscape-1/*.JPG)",
+      "Bash(done)",
+      "Bash(python optimize_images.py:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
