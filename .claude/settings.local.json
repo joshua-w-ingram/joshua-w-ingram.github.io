@@ -13,7 +13,10 @@
       "Bash(git push:*)",
       "Bash(for img in assets/images/project-landscape-1/*.JPG)",
       "Bash(done)",
-      "Bash(python optimize_images.py:*)"
+      "Bash(python optimize_images.py:*)",
+      "Bash(git rm:*)",
+      "Bash(.gitignore)",
+      "Bash(ls \"G:\\My Drive\\Projects\\Portfolio\\assets\\images\\project-landscape-1\"\" | grep -i \"DSC00004 \")"
     ],
     "deny": [],
     "ask": []

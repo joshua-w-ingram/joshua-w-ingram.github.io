@@ -34,6 +34,49 @@ function toggleMenu(){
   <h1 class="section-title">Wyckoff Ranch — Tiered Lake System & Landscape Terracing</h1>
   <p class="proj-date">2018-06-01</p>
 
+  <!-- Carousel -->
+  <div class="carousel">
+    <div class="slides">
+      <img src='/assets/images/project-landscape-2/DSC00381.JPG' alt='Project image'>
+      <img src='/assets/images/project-landscape-2/DSC00387.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-2/DSC00418.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-2/DSC00421.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-2/DSC00449.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-2/DSC00460.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-2/DSC00465.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-2/DSC00466.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-2/DSC00471.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-2/DSC00485a.jpg' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-2/DSC00486.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-2/DSC00489.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-2/DSC00492.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-2/DSC00532.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-2/DSC00535.JPG' loading='lazy' alt='Project image'>
+    </div>
+    <button class="prev">❮</button>
+    <button class="next">❯</button>
+  </div>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function(){
+    const carousel = document.querySelector('.carousel');
+    if (!carousel) return;
+    const slidesContainer = carousel.querySelector('.slides');
+    const slides = slidesContainer.querySelectorAll('img');
+    if (slides.length === 0) return;
+    const prev = carousel.querySelector('.prev');
+    const next = carousel.querySelector('.next');
+    let index = 0;
+    function showSlide(i){
+      index = (i + slides.length) % slides.length;
+      slidesContainer.style.transform = `translateX(${-index * 100}%)`;
+    }
+    prev.addEventListener('click', ()=> showSlide(index - 1));
+    next.addEventListener('click', ()=> showSlide(index + 1));
+    showSlide(0);
+  });
+  </script>
+
   <p class="lead">
     The Wyckoff property spans 30 acres along the Guadalupe River, presenting both an opportunity and
     a challenge: how to transform sloped terrain into a series of functional, beautiful spaces that work
@@ -111,64 +154,6 @@ function toggleMenu(){
     plantings not yet mature, earth still settling. The completed project demonstrates how rigorous
     site work and careful construction can create landscapes that feel both intentional and organic.
   </p>
-
-  <!-- Carousel -->
-  <div class="carousel">
-    <div class="slides">
-      <img src='/assets/images/project-landscape-2/DSC00381.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00381.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00387.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00387.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00418.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00418.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00421.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00421.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00449.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00449.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00460.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00460.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00465.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00465.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00466.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00466.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00471.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00471.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00485a.jpg' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00485a.jpg' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00486.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00486.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00489.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00489.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00492.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00492.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00532.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00532.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00535.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-2/DSC00535.JPG' alt='Project image'>
-    </div>
-    <button class="prev">❮</button>
-    <button class="next">❯</button>
-  </div>
-
-  <script>
-  document.addEventListener("DOMContentLoaded", function(){
-    const carousel = document.querySelector('.carousel');
-    if (!carousel) return;
-    const slidesContainer = carousel.querySelector('.slides');
-    const slides = slidesContainer.querySelectorAll('img');
-    if (slides.length === 0) return;
-    const prev = carousel.querySelector('.prev');
-    const next = carousel.querySelector('.next');
-    let index = 0;
-    function showSlide(i){
-      index = (i + slides.length) % slides.length;
-      slidesContainer.style.transform = `translateX(${-index * 100}%)`;
-    }
-    prev.addEventListener('click', ()=> showSlide(index - 1));
-    next.addEventListener('click', ()=> showSlide(index + 1));
-    showSlide(0);
-  });
-  </script>
 
   <a class="btn" href="/projects.html">Back to all projects</a>
 </section>

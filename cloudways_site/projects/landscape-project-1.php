@@ -11,6 +11,55 @@ include __DIR__ . '/../partials/header.php';
   <h1 class="section-title"><?php echo htmlspecialchars($meta['title']); ?></h1>
   <p class="proj-date"><?php echo htmlspecialchars($meta['date']); ?></p>
 
+  <!-- Carousel -->
+  <div class="carousel">
+    <div class="slides">
+      <?php
+        $folder = __DIR__ . '/../assets/images/project-landscape-1/';
+        $webpath = '/assets/images/project-landscape-1/';
+        if (is_dir($folder)) {
+          $images = glob($folder . '*.{jpg,jpeg,png,gif,webp,JPG,JPEG,PNG,GIF,WEBP}', GLOB_BRACE);
+          sort($images);
+          $first = true;
+          foreach ($images as $file) {
+            $filename = basename($file);
+            if ($filename !== 'desktop.ini') {
+              // First image loads immediately, rest use lazy loading
+              if ($first) {
+                echo "<img src='{$webpath}{$filename}' alt='Project image'>";
+                $first = false;
+              } else {
+                echo "<img src='{$webpath}{$filename}' loading='lazy' alt='Project image'>";
+              }
+            }
+          }
+        }
+      ?>
+    </div>
+    <button class="prev">❮</button>
+    <button class="next">❯</button>
+  </div>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function(){
+    const carousel = document.querySelector('.carousel');
+    if (!carousel) return;
+    const slidesContainer = carousel.querySelector('.slides');
+    const slides = slidesContainer.querySelectorAll('img');
+    if (slides.length === 0) return;
+    const prev = carousel.querySelector('.prev');
+    const next = carousel.querySelector('.next');
+    let index = 0;
+    function showSlide(i){
+      index = (i + slides.length) % slides.length;
+      slidesContainer.style.transform = `translateX(${-index * 100}%)`;
+    }
+    prev.addEventListener('click', ()=> showSlide(index - 1));
+    next.addEventListener('click', ()=> showSlide(index + 1));
+    showSlide(0);
+  });
+  </script>
+
   <p class="lead">
     Near Comfort, Texas, on a private ranch, my father and I designed and built a three-tier lake system
     from the ground up. The project balances functional water management with aesthetic ambition:
@@ -107,48 +156,6 @@ include __DIR__ . '/../partials/header.php';
     reality rather than drawn proposal. The sequence demonstrates technical execution, spatial
     planning, and the collaborative process that defines this kind of landscape construction.
   </p>
-
-  <!-- Carousel -->
-  <div class="carousel">
-    <div class="slides">
-      <?php
-        $folder = __DIR__ . '/../assets/images/project-landscape-1/';
-        $webpath = '/assets/images/project-landscape-1/';
-        if (is_dir($folder)) {
-          $images = glob($folder . '*.{jpg,jpeg,png,gif,webp,JPG,JPEG,PNG,GIF,WEBP}', GLOB_BRACE);
-          sort($images);
-          foreach ($images as $file) {
-            $filename = basename($file);
-            if ($filename !== 'desktop.ini') {
-              echo "<img src='{$webpath}{$filename}' alt='Project image'>";
-            }
-          }
-        }
-      ?>
-    </div>
-    <button class="prev">❮</button>
-    <button class="next">❯</button>
-  </div>
-
-  <script>
-  document.addEventListener("DOMContentLoaded", function(){
-    const carousel = document.querySelector('.carousel');
-    if (!carousel) return;
-    const slidesContainer = carousel.querySelector('.slides');
-    const slides = slidesContainer.querySelectorAll('img');
-    if (slides.length === 0) return;
-    const prev = carousel.querySelector('.prev');
-    const next = carousel.querySelector('.next');
-    let index = 0;
-    function showSlide(i){
-      index = (i + slides.length) % slides.length;
-      slidesContainer.style.transform = `translateX(${-index * 100}%)`;
-    }
-    prev.addEventListener('click', ()=> showSlide(index - 1));
-    next.addEventListener('click', ()=> showSlide(index + 1));
-    showSlide(0);
-  });
-  </script>
 
   <a class="btn" href="/projects.php">Back to all projects</a>
 </section>

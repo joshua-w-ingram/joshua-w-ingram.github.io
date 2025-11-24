@@ -7,11 +7,11 @@ BASE_DIR = Path(r"G:\My Drive\Projects\Portfolio\assets\images")
 FOLDERS_TO_OPTIMIZE = ['project-landscape-1', 'project-landscape-2']
 
 # Target max width for images (height will scale proportionally)
-MAX_WIDTH = 1920
-MAX_HEIGHT = 1440
+MAX_WIDTH = 1200
+MAX_HEIGHT = 900
 
-# JPEG quality (0-100, 85 is a good balance of quality/size)
-JPEG_QUALITY = 85
+# JPEG quality (0-100, 75 provides good quality with much smaller file size)
+JPEG_QUALITY = 75
 
 def optimize_image(image_path):
     """Resize and compress an image"""

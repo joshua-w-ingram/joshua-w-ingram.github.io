@@ -34,6 +34,68 @@ function toggleMenu(){
   <h1 class="section-title">Boller Ranch — Three-Tier Lake System with Integrated Water Features</h1>
   <p class="proj-date">2019-08-01</p>
 
+  <!-- Carousel -->
+  <div class="carousel">
+    <div class="slides">
+      <img src='/assets/images/project-landscape-1/DSC00004.JPG' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00006.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00009.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00012.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00025.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00027.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00028.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00052.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00055.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00060.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00071.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00079.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00080.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00628.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00629.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00630.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00631.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00634.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00635.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00636.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00637.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00646.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00647.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00648.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00649.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00653.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00655.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00660.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00661.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00662.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00663.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00664.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00665.JPG' loading='lazy' alt='Project image'>
+      <img src='/assets/images/project-landscape-1/DSC00666.JPG' loading='lazy' alt='Project image'>
+    </div>
+    <button class="prev">❮</button>
+    <button class="next">❯</button>
+  </div>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function(){
+    const carousel = document.querySelector('.carousel');
+    if (!carousel) return;
+    const slidesContainer = carousel.querySelector('.slides');
+    const slides = slidesContainer.querySelectorAll('img');
+    if (slides.length === 0) return;
+    const prev = carousel.querySelector('.prev');
+    const next = carousel.querySelector('.next');
+    let index = 0;
+    function showSlide(i){
+      index = (i + slides.length) % slides.length;
+      slidesContainer.style.transform = `translateX(${-index * 100}%)`;
+    }
+    prev.addEventListener('click', ()=> showSlide(index - 1));
+    next.addEventListener('click', ()=> showSlide(index + 1));
+    showSlide(0);
+  });
+  </script>
+
   <p class="lead">
     Near Comfort, Texas, on a private ranch, my father and I designed and built a three-tier lake system
     from the ground up. The project balances functional water management with aesthetic ambition:
@@ -130,102 +192,6 @@ function toggleMenu(){
     reality rather than drawn proposal. The sequence demonstrates technical execution, spatial
     planning, and the collaborative process that defines this kind of landscape construction.
   </p>
-
-  <!-- Carousel -->
-  <div class="carousel">
-    <div class="slides">
-      <img src='/assets/images/project-landscape-1/DSC00004.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00004.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00006.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00006.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00009.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00009.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00012.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00012.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00025.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00025.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00027.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00027.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00028.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00028.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00052.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00052.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00055.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00055.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00060.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00060.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00071.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00071.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00079.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00079.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00080.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00080.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00628.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00628.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00629.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00629.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00630.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00630.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00631.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00631.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00634.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00634.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00635.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00635.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00636.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00636.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00637.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00637.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00646.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00646.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00647.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00647.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00648.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00648.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00649.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00649.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00653.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00653.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00655.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00655.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00660.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00660.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00661.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00661.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00662.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00662.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00663.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00663.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00664.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00664.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00665.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00665.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00666.JPG' alt='Project image'>
-      <img src='/assets/images/project-landscape-1/DSC00666.JPG' alt='Project image'>
-    </div>
-    <button class="prev">❮</button>
-    <button class="next">❯</button>
-  </div>
-
-  <script>
-  document.addEventListener("DOMContentLoaded", function(){
-    const carousel = document.querySelector('.carousel');
-    if (!carousel) return;
-    const slidesContainer = carousel.querySelector('.slides');
-    const slides = slidesContainer.querySelectorAll('img');
-    if (slides.length === 0) return;
-    const prev = carousel.querySelector('.prev');
-    const next = carousel.querySelector('.next');
-    let index = 0;
-    function showSlide(i){
-      index = (i + slides.length) % slides.length;
-      slidesContainer.style.transform = `translateX(${-index * 100}%)`;
-    }
-    prev.addEventListener('click', ()=> showSlide(index - 1));
-    next.addEventListener('click', ()=> showSlide(index + 1));
-    showSlide(0);
-  });
-  </script>
 
   <a class="btn" href="/projects.html">Back to all projects</a>
 </section>

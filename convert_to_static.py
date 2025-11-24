@@ -155,10 +155,15 @@ def render_project_images(project_name, php_content):
         for ext in ['jpg', 'jpeg', 'png', 'gif', 'webp', 'JPG', 'JPEG', 'PNG', 'GIF', 'WEBP']:
             images.extend(list(img_folder.glob(f"*.{ext}")))
 
-        images = sorted([img for img in images if img.name.lower() != 'desktop.ini'])
+        # Remove duplicates (Windows glob is case-insensitive) and sort
+        images = sorted(list(set([img for img in images if img.name.lower() != 'desktop.ini'])))
 
-        for img in images:
-            html += f"      <img src='/{folder_path}/{img.name}' alt='Project image'>\n"
+        for i, img in enumerate(images):
+            # First image loads immediately, rest use lazy loading
+            if i == 0:
+                html += f"      <img src='/{folder_path}/{img.name}' alt='Project image'>\n"
+            else:
+                html += f"      <img src='/{folder_path}/{img.name}' loading='lazy' alt='Project image'>\n"
 
     return html
 
