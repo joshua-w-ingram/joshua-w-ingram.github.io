@@ -1,7 +1,7 @@
 <?php
 $meta = [
   'title' => 'Camp Bullis Estate — Large-Scale Site Grading and Athletic Facilities',
-  'date' => '2015-09-01',
+  'date' => '2024-01-01',
   'keywords' => ['landscape architecture', 'site grading', 'athletic facilities', 'mountain excavation', 'slope mitigation', 'estate design']
 ];
 include __DIR__ . '/../partials/header.php';
