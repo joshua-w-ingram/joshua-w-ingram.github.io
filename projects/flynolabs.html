@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Josh Ingram</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+ <header class="site-header">
+  <div class="container header-inner">
+    <div class="brand"><a href="/index.html">Josh Ingram</a></div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
+    <nav class="main-nav">
+      <a href="/index.html">Home</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+function toggleMenu(){
+  const nav=document.querySelector('.main-nav');
+  nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+}
+</script>
+
+  <main class="site-content container">
+
+
+<section>
+  <h1 class="section-title">FlynoLabs — Experimental Drone Design and Prototyping</h1>
+  <p class="proj-date">2023-01-15</p>
+
+  <!-- Carousel -->
+  <div class="carousel">
+    <div class="slides">
+      <img src="/assets/images/flynolabs/image11.jpg" alt="FlynoLabs cover">
+      <img src="/assets/images/flynolabs/image42.png" loading="lazy" alt="Y-Knot design">
+      <img src="/assets/images/flynolabs/image23.jpg" loading="lazy" alt="Y-Knot prototype">
+      <img src="/assets/images/flynolabs/image26.jpg" loading="lazy" alt="Y-Knot detail">
+      <img src="/assets/images/flynolabs/image25.jpg" loading="lazy" alt="Y-Knot assembly">
+      <img src="/assets/images/flynolabs/image13.jpg" loading="lazy" alt="Y-Knot vertical arms">
+      <img src="/assets/images/flynolabs/image37.png" loading="lazy" alt="Y-Knot render">
+      <img src="/assets/images/flynolabs/image22.png" loading="lazy" alt="RatKwad design">
+      <img src="/assets/images/flynolabs/image2.png" loading="lazy" alt="RatKwad render">
+      <img src="/assets/images/flynolabs/image33.jpg" loading="lazy" alt="RatKwad prototype">
+      <img src="/assets/images/flynolabs/image12.jpg" loading="lazy" alt="RatKwad detail">
+      <img src="/assets/images/flynolabs/image20.jpg" loading="lazy" alt="RatKwad in field">
+      <img src="/assets/images/flynolabs/image16.png" loading="lazy" alt="Delivery Drone concept">
+      <img src="/assets/images/flynolabs/image14.jpg" loading="lazy" alt="Delivery Drone build">
+      <img src="/assets/images/flynolabs/image21.png" loading="lazy" alt="Delivery Drone render">
+      <img src="/assets/images/flynolabs/image32.jpg" loading="lazy" alt="Delivery Drone prototype">
+      <img src="/assets/images/flynolabs/image24.png" loading="lazy" alt="Delivery Drone detail">
+      <img src="/assets/images/flynolabs/image36.png" loading="lazy" alt="Delivery Drone final">
+      <img src="/assets/images/flynolabs/image29.png" loading="lazy" alt="Prototype collection">
+      <img src="/assets/images/flynolabs/image8.jpg" loading="lazy" alt="Prototyping">
+      <img src="/assets/images/flynolabs/image44.jpg" loading="lazy" alt="Workshop">
+      <img src="/assets/images/flynolabs/image3.jpg" loading="lazy" alt="Prototype lineup">
+      <img src="/assets/images/flynolabs/image34.jpg" loading="lazy" alt="Experimental design">
+      <img src="/assets/images/flynolabs/image39.jpg" loading="lazy" alt="Testing">
+      <img src="/assets/images/flynolabs/image35.jpg" loading="lazy" alt="Build process">
+      <img src="/assets/images/flynolabs/image28.jpg" loading="lazy" alt="Component detail">
+      <img src="/assets/images/flynolabs/image38.jpg" loading="lazy" alt="Assembly">
+      <img src="/assets/images/flynolabs/image40.jpg" loading="lazy" alt="Field testing">
+      <img src="/assets/images/flynolabs/image41.jpg" loading="lazy" alt="Prototype detail">
+      <img src="/assets/images/flynolabs/image1.jpg" loading="lazy" alt="Design iteration">
+      <img src="/assets/images/flynolabs/image4.jpg" loading="lazy" alt="Components">
+      <img src="/assets/images/flynolabs/image31.jpg" loading="lazy" alt="Build">
+      <img src="/assets/images/flynolabs/image18.jpg" loading="lazy" alt="Testing setup">
+      <img src="/assets/images/flynolabs/image17.jpg" loading="lazy" alt="Prototype">
+      <img src="/assets/images/flynolabs/image27.jpg" loading="lazy" alt="Detail shot">
+      <img src="/assets/images/flynolabs/image19.jpg" loading="lazy" alt="Field work">
+      <img src="/assets/images/flynolabs/image43.jpg" loading="lazy" alt="Assembly detail">
+      <img src="/assets/images/flynolabs/image30.jpg" loading="lazy" alt="Final prototype">
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function(){
+    const carousel = document.querySelector('.carousel');
+    if (!carousel) return;
+    const slidesContainer = carousel.querySelector('.slides');
+    const slides = slidesContainer.querySelectorAll('img');
+    if (slides.length === 0) return;
+    const prev = carousel.querySelector('.prev');
+    const next = carousel.querySelector('.next');
+    let index = 0;
+    function showSlide(i){
+      index = (i + slides.length) % slides.length;
+      slidesContainer.style.transform = `translateX(${-index * 100}%)`;
+    }
+    prev.addEventListener('click', ()=> showSlide(index - 1));
+    next.addEventListener('click', ()=> showSlide(index + 1));
+    showSlide(0);
+  });
+  </script>
+
+  <p class="lead">
+    FlynoLabs is where bold ideas meet cutting-edge prototyping. This R&D arm of Flynoceros
+    serves as a playground for drone enthusiasts, engineers, and dreamers alike. We're not
+    afraid to push boundaries or experiment with the unconventional—because that's where
+    the magic happens.
+  </p>
+
+  <h2 class="section-title">Y-Knot</h2>
+  <p>
+    The Y-Knot platform was built for experimentation and adaptability, breaking away from
+    traditional quadcopter designs. By rethinking configurations like Y4s and V-tails, we
+    crafted a versatile design centered around a robust back beam, allowing for limitless
+    customization.
+  </p>
+
+  <p>
+    One of the key innovations is integrated feet, addressing a common issue with Y4 designs:
+    stability during landing. These feet protect inverted motors and propellers while serving
+    as connection points for modular accessories.
+  </p>
+
+  <p>
+    The Y-Knot also explores <strong>vertical arm configurations</strong> and sandwiched motor
+    plates. Using perpendicular carbon fiber plates secured with three connection points, we
+    minimized racking while maintaining strength and durability. This sturdy design has proven
+    successful, offering exciting opportunities for larger drone applications.
+  </p>
+
+  <h2 class="section-title">RatKwad</h2>
+  <p>
+    The RatKwad reimagines FPV drone design by challenging the traditional placement of the
+    camera and battery. Inspired by the iconic view over the dash of old-school rat rods, the
+    RatKwad places the FPV camera above the drone's canopy, offering pilots a unique perspective
+    that includes a glimpse of their own drone in flight. This design isn't just fun—it also
+    prioritizes practicality.
+  </p>
+
+  <p>
+    By centering the battery within the drone, the RatKwad solves the age-old dilemma of weight
+    distribution. Placing the mass at the center reduces the moment of inertia, improves
+    stability, and enhances battery efficiency during turns. With a design that mirrors the
+    layout of a classic rat rod, the motors and propellers mimic the wheel drive system, the
+    battery acts as the engine, and the electronics are housed securely in the "cab."
+  </p>
+
+  <p>
+    The result? A durable, balanced drone with a distinctive style and an exhilarating flight
+    experience. Building and flying the RatKwad isn't just a hobby—it's pure fun.
+  </p>
+
+  <h2 class="section-title">Delivery Drone</h2>
+  <p>
+    The Delivery Drone was a passion project that combined functionality with vintage-inspired
+    aesthetics. Born from the question, "What if a drone had a practical use?" the goal was to
+    create a drone capable of delivering a simple, lightweight item—like a can of soda—while
+    maintaining a unique, stylish design.
+  </p>
+
+  <p>
+    Drawing inspiration from old milk trucks, the drone features a cab-like front section for
+    the electronics and battery, reminiscent of the RatKwad, and a van-style rear compartment
+    for the payload. The rear section opens and closes, allowing for secure transport of the
+    shipment. Balancing practicality and performance, the drone underwent three design iterations
+    to achieve a sleek, functional design that performs beautifully while turning heads.
+  </p>
+
+  <p>
+    This project was a delightful exploration of how drones can be both useful and visually
+    captivating, delivering not just goods but a sense of nostalgia and creativity.
+  </p>
+
+  <h2 class="section-title">Prototyping Philosophy</h2>
+  <p>
+    Over the years, we've designed countless prototypes and one-of-a-kind drones, each born
+    from unique ideas and a passion for experimentation. From wild one-offs to functional
+    innovations, these designs represent the endless possibilities and imagination that have
+    fueled our work.
+  </p>
+
+  <p>
+    FlynoLabs is more than a workshop; it's a think tank where creativity thrives, and every
+    wild concept gets its chance to soar. From refining ultralight racing frames to testing
+    new materials and configurations, we're constantly exploring what's possible. Here, every
+    idea gets the wings it deserves.
+  </p>
+
+  <a class="btn" href="/projects.html">Back to all projects</a>
+</section>
+
+
+
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      &copy; 2025 Josh Ingram &mdash; <a href="mailto:joshua.w.ingram@gmail.com">joshua.w.ingram@gmail.com</a>
+    </div>
+  </footer>
+</body>
+</html>
